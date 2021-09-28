@@ -1,0 +1,3 @@
+R5T.D0084.D003.Base - Service definitions for services providing solution and project related paths from other solution and project related paths.
+
+GOALS:

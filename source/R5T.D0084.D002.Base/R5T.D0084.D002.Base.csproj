@@ -2,7 +2,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\R5T.Dacia\source\R5T.Dacia.T002\R5T.Dacia.T002.csproj" />
-    <ProjectReference Include="..\..\..\R5T.Magyar\source\R5T.Magyar\R5T.Magyar.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

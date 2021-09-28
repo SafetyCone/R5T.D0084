@@ -1,0 +1,3 @@
+R5T.D0084.D002.Base - IRepositoriesDirectoryPathProvider service definition, parameterless, without further assumptions on the repositories directory path.
+
+GOALS:

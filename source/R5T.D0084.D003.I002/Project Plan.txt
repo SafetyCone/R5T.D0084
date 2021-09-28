@@ -1,0 +1,3 @@
+R5T.D0084.D003.I002 - An ISolutionDirectoryPathProvider implementation specific to the /source repository directory-relative solution directory.
+
+GOALS:

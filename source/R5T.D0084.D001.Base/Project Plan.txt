@@ -1,0 +1,7 @@
+R5T.D0084.D001.Base - Service definitions for all IAll{X}PathProvider services that are:
+
+* Parameterless
+* Stringly-typed
+
+
+GOALS:

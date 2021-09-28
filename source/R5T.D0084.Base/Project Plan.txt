@@ -1,3 +1,10 @@
 R5T.D0084.Base - Base service definitions for Local source code path related services..
 
-GOALS:
+Prior work:
+
+* R5T.E0036.Lib
+* R5T.E0026.D001.Base
+
+Namespaces:
+
+* D001 - Get all project directory paths from a specified repositories directory path (perhaps via hard-coded or static implementation).
