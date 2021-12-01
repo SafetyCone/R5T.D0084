@@ -1,9 +1,9 @@
-using System;
+﻿using System;
 
-using Microsoft.Extensions.DependencyInjection;
-
-using R5T.Dacia;
 using R5T.Magyar;
+
+using R5T.T0062;
+using R5T.T0063;
 
 using R5T.D0084.D001.I002;
 using R5T.D0084.D002;
@@ -13,23 +13,23 @@ using R5T.D0084.D003.I002;
 
 namespace R5T.D0084.A001
 {
-    public static class IServiceCollectionExtensions
+    public static class IServiceActionExtensions
     {
-        public static ServiceAggregation02 AddAllProjectFilePathsProviderServiceActions(this IServiceCollection services,
+        public static ServiceActionAggregation02 AddAllProjectFilePathsProviderServiceActions(this IServiceAction _,
             IServiceAction<IRepositoriesDirectoryPathProvider> repositoriesDirectoryPathProviderAction)
         {
             // Level 0.
-            var projectFilePathProviderAction = services.AddProjectFilePathProviderAction_Old();
+            var projectFilePathProviderAction = _.AddProjectFilePathProviderAction();
 
-            var allProjectDirectoryPathsProviderServiceActions = services.AddAllProjectDirectoryPathsProviderServiceActions(
+            var allProjectDirectoryPathsProviderServiceActions = _.AddAllProjectDirectoryPathsProviderServiceActions(
                 repositoriesDirectoryPathProviderAction);
 
-            var allProjectFilePathsProviderAction = services.AddAllProjectFilePathsProviderAction_Old(
+            var allProjectFilePathsProviderAction = _.AddAllProjectFilePathsProviderAction(
                 allProjectDirectoryPathsProviderServiceActions.AllProjectDirectoryPathsProviderAction,
                 projectFilePathProviderAction);
 
-            return new ServiceAggregation02()
-                .As<ServiceAggregation02, IServiceAggregationIncrement02>(increment =>
+            return new ServiceActionAggregation02()
+                .As<ServiceActionAggregation02, IServiceActionAggregationIncrement02>(increment =>
                 {
                     increment.AllProjectFilePathsProviderAction = allProjectFilePathsProviderAction;
                     increment.ProjectFilePathProviderAction = projectFilePathProviderAction;
@@ -38,28 +38,28 @@ namespace R5T.D0084.A001
                 ;
         }
 
-        public static ServiceAggregation01 AddAllProjectDirectoryPathsProviderServiceActions(this IServiceCollection services,
+        public static ServiceActionAggregation01 AddAllProjectDirectoryPathsProviderServiceActions(this IServiceAction _,
             IServiceAction<IRepositoriesDirectoryPathProvider> repositoriesDirectoryPathProviderAction)
         {
             // Level 0.
-            var projectDirectoryPathsProviderAction = services.AddProjectDirectoryPathsProviderAction_Old();
-            var solutionDirectoryPathProviderAction = services.AddSourceSolutionDirectoryPathProviderAction_Old();
+            var projectDirectoryPathsProviderAction = _.AddProjectDirectoryPathsProviderAction();
+            var solutionDirectoryPathProviderAction = _.AddSourceSolutionDirectoryPathProviderAction();
 
             // Level 1.
-            var allRepositoryDirectoryPathsProviderAction = services.AddAllRepositoryDirectoryPathsProviderAction_Old(
+            var allRepositoryDirectoryPathsProviderAction = _.AddAllRepositoryDirectoryPathsProviderAction(
                 repositoriesDirectoryPathProviderAction);
 
             // Level 2.
-            var allSolutionDirectoryPathsProviderAction = services.AddAllSolutionDirectoryPathsProviderAction_Old(
+            var allSolutionDirectoryPathsProviderAction = _.AddAllSolutionDirectoryPathsProviderAction(
                 allRepositoryDirectoryPathsProviderAction,
                 solutionDirectoryPathProviderAction);
 
             // Level 3.
-            var allProjectDirectoryPathsProviderAction = services.AddAllProjectDirectoryPathsProviderAction_Old(
+            var allProjectDirectoryPathsProviderAction = _.AddAllProjectDirectoryPathsProviderAction(
                 allSolutionDirectoryPathsProviderAction,
                 projectDirectoryPathsProviderAction);
 
-            return new ServiceAggregation01
+            return new ServiceActionAggregation01
             {
                 AllProjectDirectoryPathsProviderAction = allProjectDirectoryPathsProviderAction,
                 AllRepositoryDirectoryPathsProviderAction = allRepositoryDirectoryPathsProviderAction,
