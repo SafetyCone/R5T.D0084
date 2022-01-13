@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-using R5T.Dacia;
+using R5T.T0064;
 
 
 namespace R5T.D0084.D001
@@ -12,7 +12,7 @@ namespace R5T.D0084.D001
     /// Makes no assumption about location or system or anything regarding repository directory paths.
     /// </summary>
     [ServiceDefinitionMarker]
-    public interface IAllRepositoryDirectoryPathsProvider
+    public interface IAllRepositoryDirectoryPathsProvider : IServiceDefinition
     {
         Task<string[]> GetAllRepositoryDirectoryPaths();
     }

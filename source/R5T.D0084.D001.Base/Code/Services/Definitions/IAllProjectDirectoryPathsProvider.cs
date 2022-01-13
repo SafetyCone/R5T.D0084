@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-using R5T.Dacia;
+using R5T.T0064;
 
 
 namespace R5T.D0084.D001
@@ -11,7 +11,7 @@ namespace R5T.D0084.D001
     /// Parameterless.
     /// </summary>
     [ServiceDefinitionMarker]
-    public interface IAllProjectDirectoryPathsProvider
+    public interface IAllProjectDirectoryPathsProvider : IServiceDefinition
     {
         Task<string[]> GetAllProjectDirectoryPaths();
     }
