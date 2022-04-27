@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-using R5T.Dacia;
+using R5T.T0064;
 
 using R5T.D0084.D003;
 
@@ -10,7 +10,7 @@ using R5T.D0084.D003;
 namespace R5T.D0084.D001.I002
 {
     [ServiceImplementationMarker]
-    public class AllProjectDirectoryPathsProvider : IAllProjectDirectoryPathsProvider
+    public class AllProjectDirectoryPathsProvider : IAllProjectDirectoryPathsProvider, IServiceImplementation
     {
         private IAllSolutionDirectoryPathsProvider AllSolutionDirectoryPathsProvider { get; }
         private IProjectDirectoryPathsProvider ProjectDirectoryPathsProvider { get; }

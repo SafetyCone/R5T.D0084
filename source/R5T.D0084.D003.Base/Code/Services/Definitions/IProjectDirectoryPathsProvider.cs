@@ -1,8 +1,9 @@
 using System;
 using System.Threading.Tasks;
 
-using R5T.Dacia;
 using R5T.Magyar;
+
+using R5T.T0064;
 
 
 namespace R5T.D0084.D003
@@ -16,7 +17,7 @@ namespace R5T.D0084.D003
     /// * Stringly-typed.
     /// </remarks>
     [ServiceDefinitionMarker]
-    public interface IProjectDirectoryPathsProvider
+    public interface IProjectDirectoryPathsProvider : IServiceDefinition
     {
         Task<WasFound<string[]>> GetProjectDirectoryPaths(string solutionDirectoryPath);
     }

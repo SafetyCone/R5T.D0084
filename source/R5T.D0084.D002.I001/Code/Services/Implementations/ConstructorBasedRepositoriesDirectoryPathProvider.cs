@@ -1,16 +1,19 @@
-﻿using System;
+using System;
 using System.Threading.Tasks;
+
+using R5T.T0064;
 
 
 namespace R5T.D0084.D002.I001
 {
-    public class ConstructorBasedRepositoriesDirectoryPathProvider : IRepositoriesDirectoryPathProvider
+    [ServiceImplementationMarker]
+    public class ConstructorBasedRepositoriesDirectoryPathProvider : IRepositoriesDirectoryPathProvider, IServiceImplementation
     {
         private string RepositoriesDirectoryPath { get; }
 
 
         public ConstructorBasedRepositoriesDirectoryPathProvider(
-            string repositoriesDirectoryPath)
+            [NotServiceComponent] string repositoriesDirectoryPath)
         {
             this.RepositoriesDirectoryPath = repositoriesDirectoryPath;
         }
