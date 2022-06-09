@@ -9,7 +9,7 @@ namespace R5T.D0084.D002.I001
     public static class IServiceActionExtensions
     {
         /// <summary>
-        /// Adds the <see cref="StaticValuedRepositoriesDirectoryPathProvider"/> implementation of <see cref="IRepositoriesDirectoryPathProvider"/> as a <see cref="ServiceLifetime.Singleton"/>.
+        /// Adds the <see cref="StaticValuedRepositoriesDirectoryPathProvider"/> implementation of <see cref="IRepositoriesDirectoryPathProvider"/> as a <see cref="Microsoft.Extensions.DependencyInjection.ServiceLifetime.Singleton"/>.
         /// </summary>
         public static IServiceAction<IRepositoriesDirectoryPathProvider> AddStaticValuedRepositoriesDirectoryPathProviderAction(this IServiceAction _)
         {
@@ -18,7 +18,7 @@ namespace R5T.D0084.D002.I001
         }
 
         /// <summary>
-        /// Adds the <see cref="ConstructorBasedRepositoriesDirectoryPathProvider"/> implementation of <see cref="IRepositoriesDirectoryPathProvider"/> as a <see cref="ServiceLifetime.Singleton"/>.
+        /// Adds the <see cref="ConstructorBasedRepositoriesDirectoryPathProvider"/> implementation of <see cref="IRepositoriesDirectoryPathProvider"/> as a <see cref="Microsoft.Extensions.DependencyInjection.ServiceLifetime.Singleton"/>.
         /// </summary>
         public static IServiceAction<IRepositoriesDirectoryPathProvider> AddConstructorBasedRepositoriesDirectoryPathProviderAction(this IServiceAction _,
             string repositoriesDirectoryPath)

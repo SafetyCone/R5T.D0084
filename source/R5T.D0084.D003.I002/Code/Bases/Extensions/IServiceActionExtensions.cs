@@ -9,7 +9,7 @@ namespace R5T.D0084.D003.I002
     public static class IServiceActionExtensions
     {
         /// <summary>
-        /// Adds the <see cref="SourceSolutionDirectoryPathProvider"/> implementation of <see cref="ISolutionDirectoryPathProvider"/> as a <see cref="ServiceLifetime.Singleton"/>.
+        /// Adds the <see cref="SourceSolutionDirectoryPathProvider"/> implementation of <see cref="ISolutionDirectoryPathProvider"/> as a <see cref="Microsoft.Extensions.DependencyInjection.ServiceLifetime.Singleton"/>.
         /// </summary>
         public static IServiceAction<ISolutionDirectoryPathProvider> AddSourceSolutionDirectoryPathProviderAction(this IServiceAction _)
         {

@@ -9,7 +9,7 @@ namespace R5T.D0084.D003.I001
     public static class IServiceActionExtensions
     {
         /// <summary>
-        /// Adds the <see cref="ProjectFilePathProvider"/> implementation of <see cref="IProjectFilePathProvider"/> as a <see cref="ServiceLifetime.Singleton"/>.
+        /// Adds the <see cref="ProjectFilePathProvider"/> implementation of <see cref="IProjectFilePathProvider"/> as a <see cref="Microsoft.Extensions.DependencyInjection.ServiceLifetime.Singleton"/>.
         /// </summary>
         public static IServiceAction<IProjectFilePathProvider> AddProjectFilePathProviderAction(this IServiceAction _)
         {
@@ -18,7 +18,7 @@ namespace R5T.D0084.D003.I001
         }
 
         /// <summary>
-        /// Adds the <see cref="ProjectDirectoryPathsProvider"/> implementation of <see cref="IProjectDirectoryPathsProvider"/> as a <see cref="ServiceLifetime.Singleton"/>.
+        /// Adds the <see cref="ProjectDirectoryPathsProvider"/> implementation of <see cref="IProjectDirectoryPathsProvider"/> as a <see cref="Microsoft.Extensions.DependencyInjection.ServiceLifetime.Singleton"/>.
         /// </summary>
         public static IServiceAction<IProjectDirectoryPathsProvider> AddProjectDirectoryPathsProviderAction(this IServiceAction _)
         {

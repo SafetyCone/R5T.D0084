@@ -1,6 +1,6 @@
 ﻿using System;
 
-using R5T.Magyar;
+using R5T.Magyar.Extensions;
 
 using R5T.T0062;
 using R5T.T0063;
@@ -29,7 +29,7 @@ namespace R5T.D0084.A001
                 projectFilePathProviderAction);
 
             return new ServiceActionAggregation02()
-                .As<ServiceActionAggregation02, IServiceActionAggregationIncrement02>(increment =>
+                .ModifyAs<ServiceActionAggregation02, IServiceActionAggregationIncrement02>(increment =>
                 {
                     increment.AllProjectFilePathsProviderAction = allProjectFilePathsProviderAction;
                     increment.ProjectFilePathProviderAction = projectFilePathProviderAction;

@@ -13,7 +13,7 @@ namespace R5T.D0084.D003.I001
     {
         public Task<WasFound<string>> GetProjectFilePath(string projectDirectoryPath)
         {
-            var projectFilePath = Instances.FileSystemOperator.FindFileInDirectoryByFileExtension(
+            var projectFilePath = Instances.FileSystemOperator.FindChildFileInDirectoryByFileExtension(
                 projectDirectoryPath,
                 Instances.FileExtension.CSharpProjectFile());
 

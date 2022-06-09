@@ -3,7 +3,7 @@ using System;
 using Microsoft.Extensions.DependencyInjection;
 
 using R5T.Dacia;
-using R5T.Magyar;
+using R5T.Magyar.Extensions;
 
 using R5T.D0084.D001.I002;
 using R5T.D0084.D002;
@@ -29,7 +29,7 @@ namespace R5T.D0084.A001
                 projectFilePathProviderAction);
 
             return new ServiceAggregation02()
-                .As<ServiceAggregation02, IServiceAggregationIncrement02>(increment =>
+                .ModifyAs<ServiceAggregation02, IServiceAggregationIncrement02>(increment =>
                 {
                     increment.AllProjectFilePathsProviderAction = allProjectFilePathsProviderAction;
                     increment.ProjectFilePathProviderAction = projectFilePathProviderAction;
